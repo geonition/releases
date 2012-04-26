@@ -10,7 +10,6 @@ languages,
 5. SPATIAL_REFERENCE_SYSTEM_ID to the right value (3067)
 
 
-
 To migrate data from previous version dump the data into the data folder
 with the names mentioned below. Load the files in the following way:
 1. python manage loaddata sites.json
