@@ -1,0 +1,20 @@
+
+1. Session should be shorter, fix this in the settings of
+the production version to maybe 2 hours
+
+1. sh install_all.sh --> installs django and everything
+2. django-admin startproject geonition
+3. modify settings.py
+4. modify urls.py
+
+2. python manage loaddata sites.json
+3. python manage loaddata dashboard.json
+4. python manage loaddata base_page.json
+5. python manage loaddata plan_proposals.json
+6. python manage loaddata group.json
+7. python manage loaddata users.json
+8. python dumpdata.py #requires a dump geojson_rest.json
+9. python manage loaddata maps.json
+10. python manage loaddata geoforms.json
+
+

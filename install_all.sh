@@ -1,0 +1,10 @@
+easy_install django
+easy_install https://github.com/geonition/django_geonition_utils/tarball/master
+easy_install https://github.com/geonition/django_auth/tarball/master
+easy_install https://github.com/geonition/django_geojson_rest/tarball/master
+easy_install https://github.com/geonition/django_opensocial_people/tarball/master
+easy_install https://github.com/geonition/django_geonition_client/tarball/master
+easy_install https://github.com/geonition/base_page/tarball/master
+easy_install https://github.com/geonition/dashboard/tarball/master
+easy_install https://github.com/geonition/planproposal/tarball/master
+easy_install https://github.com/geonition/geoforms/tarball/master
