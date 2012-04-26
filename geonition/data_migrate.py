@@ -1,9 +1,9 @@
 from django.core.management import setup_environ
-import settings
+from geonition import settings
 
 setup_environ(settings)
 
-jsonfile = open("data/geojson_rest.json")
+jsonfile = open("../data/geojson_rest.json")
 print jsonfile
 
 import json

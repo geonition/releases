@@ -7,4 +7,7 @@ easy_install https://github.com/geonition/django_geonition_client/tarball/master
 easy_install https://github.com/geonition/base_page/tarball/master
 easy_install https://github.com/geonition/dashboard/tarball/master
 easy_install https://github.com/geonition/planproposal/tarball/master
+easy_install https://github.com/geonition/auth_page/tarball/master
 easy_install https://github.com/geonition/geoforms/tarball/master
+easy_install https://github.com/geonition/geodjango-map-layers/tarball/master
+easy_install https://github.com/geonition/django_images/tarball/master

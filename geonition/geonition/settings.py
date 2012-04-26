@@ -14,10 +14,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.contrib.gis.db.backends.postgis', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
         'NAME': 'geonition',                      # Or path to database file if using sqlite3.
-        'USER': 'epehmo',                      # Not used with sqlite3.
-        'PASSWORD': 'epehmo',                  # Not used with sqlite3.
-        'HOST': '/var/pgsql_socket',                      # Set to empty string for localhost. Not used with sqlite3.
-        'PORT': '5432',                      # Set to empty string for default. Not used with sqlite3.
+        'USER': 'ksnabb',                      # Not used with sqlite3.
+        'PASSWORD': 'ksnabb',               # Not used with sqlite3.
+        'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
+        'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
     }
 }
 
@@ -33,6 +33,8 @@ TIME_ZONE = 'Europe/Helsinki'
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
 LANGUAGE_CODE = 'fi'
+
+LANGUAGES = (('fi', 'Finnish'),)
 
 SITE_ID = 1
 
@@ -51,6 +53,8 @@ USE_TZ = True
 # trailing slash.
 # Examples: "http://media.lawrence.com/media/", "http://example.com/media/"
 MEDIA_URL = ''
+
+MEDIA_ROOT = '/home/ksnabb/Projects/release.env/lib/python2.7/site-packages/gntimages-0.1-py2.7.egg/gntimages'
 
 # Absolute path to the directory static files should be collected to.
 # Don't put anything in this directory yourself; store your static files
@@ -149,8 +153,40 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
-    
+    'django.contrib.gis',
+
     #geonition apps
-    
+    'base_page',
+    'dashboard',
+    'maps',
+    'auth_page',
+    'plan_proposals',
+    'geonition_client',
+    'gntauth',
+    'gntimages',
+    'geojson_rest',
+    'geonition_utils',
+    'geoforms',
+
 )
+
+TEMPLATE_CONTEXT_PROCESSORS = (
+"django.contrib.auth.context_processors.auth",
+"django.core.context_processors.debug",
+"django.core.context_processors.i18n",
+"django.core.context_processors.media",
+"django.core.context_processors.static",
+"django.core.context_processors.tz",
+"django.contrib.messages.context_processors.messages",
+"base_page.context_processors.city"
+)
+
+JAVASCRIPT_CLIENT_TEMPLATES = [
+    'geonition_auth.jquery.js',
+    'data_processing.jquery.js',
+    'opensocial_people.jquery.js',
+    'geonition_geojson.jquery.js'
+]
+
+SPATIAL_REFERENCE_SYSTEM_ID = 3067
 
