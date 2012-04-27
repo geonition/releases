@@ -5,7 +5,7 @@ TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
     ('Kristoffer Snabb', 'kristoffer.snabb@gmail.com'),
-    ('Mikko Johansson', 'mikko.johansson@gmail.com'),
+    ('Mikko Johansson', 'mikko.johansson@aalto.fi'),
 )
 
 MANAGERS = ADMINS
@@ -167,6 +167,7 @@ INSTALLED_APPS = (
     'geojson_rest',
     'geonition_utils',
     'geoforms',
+    'opensocial_people',
 
 )
 
