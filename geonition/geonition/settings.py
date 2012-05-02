@@ -1,42 +1,8 @@
 # Django settings for geonition project.
 
-DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
-ADMINS = (
-    ('Kristoffer Snabb', 'kristoffer.snabb@gmail.com'),
-    ('Mikko Johansson', 'mikko.johansson@aalto.fi'),
-)
-
 MANAGERS = ADMINS
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.contrib.gis.db.backends.postgis', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'geonition',                      # Or path to database file if using sqlite3.
-        'USER': 'ksnabb',                      # Not used with sqlite3.
-        'PASSWORD': 'ksnabb',               # Not used with sqlite3.
-        'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
-        'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
-    }
-}
-
-# Local time zone for this installation. Choices can be found here:
-# http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
-# although not all choices may be available on all operating systems.
-# On Unix systems, a value of None will cause Django to use the same
-# timezone as the operating system.
-# If running in a Windows environment this must be set to the same as your
-# system time zone.
-TIME_ZONE = 'Europe/Helsinki'
-
-# Language code for this installation. All choices can be found here:
-# http://www.i18nguy.com/unicode/language-identifiers.html
-LANGUAGE_CODE = 'fi'
-
-LANGUAGES = (('fi', 'Finnish'),)
-
-SITE_ID = 1
 
 # If you set this to False, Django will make some optimizations so as not
 # to load the internationalization machinery.
@@ -48,23 +14,6 @@ USE_L10N = True
 
 # If you set this to False, Django will not use timezone-aware datetimes.
 USE_TZ = True
-
-# URL that handles the media served from MEDIA_ROOT. Make sure to use a
-# trailing slash.
-# Examples: "http://media.lawrence.com/media/", "http://example.com/media/"
-MEDIA_URL = ''
-
-MEDIA_ROOT = '/home/ksnabb/Projects/release.env/lib/python2.7/site-packages/gntimages-0.1-py2.7.egg/gntimages'
-
-# Absolute path to the directory static files should be collected to.
-# Don't put anything in this directory yourself; store your static files
-# in apps' "static/" subdirectories and in STATICFILES_DIRS.
-# Example: "/home/media/media.lawrence.com/static/"
-STATIC_ROOT = ''
-
-# URL prefix for static files.
-# Example: "http://media.lawrence.com/static/"
-STATIC_URL = '/static/'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
@@ -189,6 +138,4 @@ JAVASCRIPT_CLIENT_TEMPLATES = [
     'opensocial_people.jquery.js',
     'geonition_geojson.jquery.js'
 ]
-
-SPATIAL_REFERENCE_SYSTEM_ID = 3067
 
