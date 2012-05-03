@@ -4,6 +4,8 @@ ADMINS = (
     ('firstname lastname', 'firstname.lastname@somewhere.com'),
 )
 
+MANAGERS = ADMINS
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.contrib.gis.db.backends.postgis', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
@@ -37,6 +39,8 @@ TIME_ZONE = 'America/Chicago'
 SITE_ID = 1
 
 DEBUG = True
+
+TEMPLATE_DEBUG = DEBUG
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.

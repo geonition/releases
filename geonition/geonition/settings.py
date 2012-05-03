@@ -1,9 +1,5 @@
 # Django settings for geonition project.
 
-TEMPLATE_DEBUG = DEBUG
-
-MANAGERS = ADMINS
-
 # If you set this to False, Django will make some optimizations so as not
 # to load the internationalization machinery.
 USE_I18N = True
@@ -46,6 +42,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
+    'geonition_utils.middleware.PreventCacheMiddleware', #should be only for REST data api
     # Uncomment the next line for simple clickjacking protection:
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
@@ -115,9 +112,7 @@ INSTALLED_APPS = (
     'gntimages',
     'geojson_rest',
     'geonition_utils',
-    'geoforms',
-    'opensocial_people',
-
+    'geoforms'
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
@@ -136,6 +131,7 @@ JAVASCRIPT_CLIENT_TEMPLATES = [
     'geonition_auth.jquery.js',
     'data_processing.jquery.js',
     'opensocial_people.jquery.js',
-    'geonition_geojson.jquery.js'
+    'geonition_geojson.jquery.js',
+    'questionnaire.api.js'
 ]
 
