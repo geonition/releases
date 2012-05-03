@@ -56,3 +56,9 @@ STATIC_ROOT = ''
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
 STATIC_URL = '/static/'
+
+POSTGIS_VERSION = (1, 5, 3)
+
+POSTGIS_TEMPLATE = 'postgis_template'
+
+EMAIL_BACKEND = 'django.core.mail.backends.dummy.EmailBackend'

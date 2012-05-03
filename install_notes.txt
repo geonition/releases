@@ -1,16 +1,13 @@
-
-1. Session should be shorter, fix this in the settings of
-the production version to maybe 2 hours
-
 1. git clone releases
 2. sh install_all.sh --> installs django and everything
 3. create a settings_<site>.py file for the site you are going to use
 4. add to settings_<site>.py database, admins, debug, time_zone, language_code,
-languages, MEDIA_ROOT,
+languages, MEDIA_ROOT, EMAIL_BACKEND and other email settings
 5. copy gntimages (base images) to MEDIA_ROOT 
 6. set SPATIAL_REFERENCE_SYSTEM_ID to the right value (3067)
 7. python manage.py syncdb
 8. python manage.py collectstatic
+9. python manage.py test --settings="geonition.settings_<site>" #should pass all the tests
 
 
 To migrate data from previous version dump the data into the data folder
