@@ -4,8 +4,7 @@ DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
-    ('Kristoffer Snabb', 'kristoffer.snabb@gmail.com'),
-    ('Mikko Johansson', 'mikko.johansson@aalto.fi'),
+    ('Kristoffer Snabb', 'kristoffer.snabb@mapital.fi'),
 )
 
 MANAGERS = ADMINS
@@ -13,11 +12,11 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.contrib.gis.db.backends.postgis', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'geonition',                      # Or path to database file if using sqlite3.
+        'NAME': 'softgis',                      # Or path to database file if using sqlite3.
         'USER': 'ksnabb',                      # Not used with sqlite3.
-        'PASSWORD': 'ksnabb',               # Not used with sqlite3.
-        'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
-        'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
+        'PASSWORD': 'mikatahansa',               # Not used with sqlite3.
+        'HOST': '54.247.168.78',                      # Set to empty string for localhost. Not used with sqlite3.
+        'PORT': '5432',                      # Set to empty string for default. Not used with sqlite3.
     }
 }
 
@@ -36,7 +35,7 @@ LANGUAGE_CODE = 'fi'
 
 LANGUAGES = (('fi', 'Finnish'),)
 
-SITE_ID = 1
+SITE_ID = 3
 
 # If you set this to False, Django will make some optimizations so as not
 # to load the internationalization machinery.
@@ -60,7 +59,7 @@ MEDIA_ROOT = '/home/ksnabb/Projects/release.env/lib/python2.7/site-packages/gnti
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/home/media/media.lawrence.com/static/"
-STATIC_ROOT = ''
+STATIC_ROOT = '/home/ubuntu/releases/static/'
 
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
@@ -190,5 +189,4 @@ JAVASCRIPT_CLIENT_TEMPLATES = [
     'geonition_geojson.jquery.js'
 ]
 
-SPATIAL_REFERENCE_SYSTEM_ID = 3067
-
+SPATIAL_REFERENCE_SYSTEM_ID = 900913
