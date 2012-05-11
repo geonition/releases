@@ -5,8 +5,8 @@
 languages, MEDIA_ROOT, EMAIL_BACKEND and other email settings
 5. copy gntimages (base images) to MEDIA_ROOT 
 6. set SPATIAL_REFERENCE_SYSTEM_ID to the right value (3067)
-7. python manage.py syncdb
-8. python manage.py collectstatic
+7. python manage.py syncdb --settings="geonition.settings_<site>"
+8. python manage.py collectstatic --settings="geonition.settings_<site>"
 9. python manage.py test --settings="geonition.settings_<site>" #should pass all the tests
 
 
