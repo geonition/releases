@@ -42,6 +42,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'geonition_utils.middleware.PreventCacheMiddleware', #should be only for REST data api
     # Uncomment the next line for simple clickjacking protection:
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -112,7 +113,8 @@ INSTALLED_APPS = (
     'gntimages',
     'geojson_rest',
     'geonition_utils',
-    'geoforms'
+    'geoforms',
+    'opensocial_people'
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
