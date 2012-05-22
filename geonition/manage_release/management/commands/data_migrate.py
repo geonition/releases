@@ -27,8 +27,12 @@ class Command(BaseCommand):
                             pass
                         new_json.append(obj)
                     new_jsonfile.write(json.dumps(new_json))
-                    new_jsonfile.close()
-                    jsonfile.close()
+                
+                else:
+                    new_jsonfile.write(jsonfile.read())
+                    
+                new_jsonfile.close()
+                jsonfile.close()
                     
                 #load the modified json file
                 try:
