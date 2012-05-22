@@ -121,6 +121,7 @@ INSTALLED_APPS = (
     
     #third party apps
     'modeltranslation',
+    'rosetta',
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (

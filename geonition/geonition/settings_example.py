@@ -62,3 +62,7 @@ POSTGIS_VERSION = (1, 5, 3)
 POSTGIS_TEMPLATE = 'postgis_template'
 
 EMAIL_BACKEND = 'django.core.mail.backends.dummy.EmailBackend'
+
+ORGANIZATION_ADMIN_DEFAULT_MAP_SETTINGS = {'default_lon': 0,
+                                           'default_lat': 0,
+                                           'default_zoom': 4}
