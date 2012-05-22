@@ -114,7 +114,10 @@ INSTALLED_APPS = (
     'geojson_rest',
     'geonition_utils',
     'geoforms',
-    'opensocial_people'
+    'opensocial_people',
+    
+    #third party apps
+    'modeltranslation',
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
@@ -136,4 +139,7 @@ JAVASCRIPT_CLIENT_TEMPLATES = [
     'geonition_geojson.jquery.js',
     'questionnaire.api.js'
 ]
+
+#MODEL TRANSLATION
+MODELTRANSLATION_TRANSLATION_REGISTRY = "geonition.translation"
 
