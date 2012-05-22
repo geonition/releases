@@ -14,14 +14,14 @@ To migrate data from previous version dump the data into the data folder
 with the names mentioned below. Load the files in the following way:
 1. python manage.py dumpdata sites --settings="geonition.***" > ../data/sites.json
 2. python manage.py dumpdata dashboard --settings="geonition.***" > ../data/dashboard.json
-3. python manage.py dumpdata sites --settings="geonition.***" > ../data/base_page.json
-4. python manage.py dumpdata sites --settings="geonition.***" > ../data/plan_proposals.json
-5. python manage.py dumpdata sites --settings="geonition.***" > ../data/group.json
-6. python manage.py dumpdata sites --settings="geonition.***" > ../data/users.json
-7. python manage.py dumpdata sites --settings="geonition.***" > ../data/geonition_utils.json
-8. python manage.py dumpdata sites --settings="geonition.***" > ../data/geojson_rest.json
-9. python manage.py dumpdata sites --settings="geonition.***" > ../data/maps.json
-10. python manage.py dumpdata sites --settings="geonition.***" > ../data/geoforms.json
+3. python manage.py dumpdata base_page --settings="geonition.***" > ../data/base_page.json
+4. python manage.py dumpdata plan_proposals --settings="geonition.***" > ../data/plan_proposals.json
+5. python manage.py dumpdata group --settings="geonition.***" > ../data/group.json
+6. python manage.py dumpdata users --settings="geonition.***" > ../data/users.json
+7. python manage.py dumpdata geonition_utils --settings="geonition.***" > ../data/geonition_utils.json
+8. python manage.py dumpdata geojson_rest --settings="geonition.***" > ../data/geojson_rest.json
+9. python manage.py dumpdata maps --settings="geonition.***" > ../data/maps.json
+10. python manage.py dumpdata geoforms --settings="geonition.***" > ../data/geoforms.json
 
 The final command will save the data to the new database
 11. python manage.py data_migrate '/absolute/path/to/data/folder/' --settings="geonition.***"
