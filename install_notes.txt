@@ -1,3 +1,7 @@
+Changes in models after last release:
+- analytics script is not put into base_page models anymore but in analytics.js script in statics app in releases
+
+STEP BY STEP:
 1. git clone releases from github
 2. sh install_all.sh --> installs django and everything
 3. create a settings_<site>.py file for the site you are going to use
