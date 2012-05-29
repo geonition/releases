@@ -117,8 +117,9 @@ INSTALLED_APPS = (
     'geoforms',
     'opensocial_people',
     
-    # release management
+    # release apps
     'manage_release',
+    'statics',
     
     #third party apps
     'modeltranslation',
