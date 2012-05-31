@@ -121,7 +121,7 @@ INSTALLED_APPS = (
     'manage_release',
     'statics',
     
-    #third party apps
+    # third party apps
     'modeltranslation',
     'rosetta',
 )
@@ -149,3 +149,7 @@ JAVASCRIPT_CLIENT_TEMPLATES = [
 #MODEL TRANSLATION
 MODELTRANSLATION_TRANSLATION_REGISTRY = "geonition.translation"
 
+from django.core.urlresolvers import reverse_lazy
+LOGIN_REDIRECT_URL = reverse_lazy('dashboard')
+LOGIN_URL = reverse_lazy('login')
+LOGOUT_URL = reverse_lazy('logout')
