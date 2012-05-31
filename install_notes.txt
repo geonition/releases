@@ -1,10 +1,10 @@
-1. git clone releases
+1. git clone releases from github
 2. sh install_all.sh --> installs django and everything
 3. create a settings_<site>.py file for the site you are going to use
 4. add to settings_<site>.py database, admins, debug, time_zone, language_code,
 languages, MEDIA_ROOT, EMAIL_BACKEND and other email settings
-5. copy gntimages (base images) to MEDIA_ROOT 
-6. set SPATIAL_REFERENCE_SYSTEM_ID to the right value (3067)
+5. copy gntimages (base images) to MEDIA_ROOT
+6. set SPATIAL_REFERENCE_SYSTEM_ID to the right value (e.g. 3067)
 7. python manage.py syncdb --settings="geonition.settings_<site>"
 8. python manage.py collectstatic --settings="geonition.settings_<site>"
 9. python manage.py test --settings="geonition.settings_<site>" #should pass all the tests
@@ -12,15 +12,18 @@ languages, MEDIA_ROOT, EMAIL_BACKEND and other email settings
 
 To migrate data from previous version dump the data into the data folder
 with the names mentioned below. Load the files in the following way:
-1. python manage loaddata sites.json
-2. python manage loaddata dashboard.json
-3. python manage loaddata base_page.json
-4. python manage loaddata plan_proposals.json
-5. python manage loaddata group.json
-6. python manage loaddata users.json
-7. python manage loaddata geonition_utils.json
-8. python data_migrate.py #requires a dump geojson_rest.json
-9. python manage loaddata maps.json
-10. python manage loaddata geoforms.json
+1. python manage.py dumpdata sites --all --settings="geonition.***" > ../data/django.contrib.sites.json
+2. python manage.py dumpdata dashboard --all --settings="geonition.***" > ../data/dashboard.json
+3. python manage.py dumpdata base_page --all --settings="geonition.***" > ../data/base_page.json
+4. python manage.py dumpdata plan_proposals --all --settings="geonition.***" > ../data/plan_proposals.json
+5. python manage.py dumpdata group --all --settings="geonition.***" > ../data/django.contrib.auth.group.json
+6. python manage.py dumpdata users --all --settings="geonition.***" > ../data/django.contrib.auth.users.json
+7. python manage.py dumpdata geonition_utils --all --settings="geonition.***" > ../data/geonition_utils.json
+8. python manage.py dumpdata geojson_rest --all --settings="geonition.***" > ../data/geojson_rest.json
+9. python manage.py dumpdata maps --all --settings="geonition.***" > ../data/maps.json
+10. python manage.py dumpdata geoforms --all --settings="geonition.***" > ../data/geoforms.json
+
+The final command will save the data to the new database
+11. python manage.py data_migrate '/absolute/path/to/data/folder/' --settings="geonition.***"
 
 
