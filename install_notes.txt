@@ -1,3 +1,7 @@
+Changes in models after last release:
+- analytics script is not put into base_page models anymore but in analytics.js script in statics app in releases
+
+STEP BY STEP:
 1. git clone releases from github
 2. sh install_all.sh --> installs django and everything
 3. create a settings_<site>.py file for the site you are going to use
@@ -5,9 +9,10 @@
 languages, MEDIA_ROOT, EMAIL_BACKEND and other email settings
 5. copy gntimages (base images) to MEDIA_ROOT
 6. set SPATIAL_REFERENCE_SYSTEM_ID to the right value (e.g. 3067)
-7. python manage.py syncdb --settings="geonition.settings_<site>"
-8. python manage.py collectstatic --settings="geonition.settings_<site>"
-9. python manage.py test --settings="geonition.settings_<site>" #should pass all the tests
+7. set ANALYTICS_TEMPLATE to the template file where you have your analytics script
+8. python manage.py syncdb --settings="geonition.settings_<site>"
+9. python manage.py collectstatic --settings="geonition.settings_<site>"
+10. python manage.py test --settings="geonition.settings_<site>" #should pass all the tests
 
 
 To migrate data from previous version dump the data into the data folder
@@ -25,5 +30,3 @@ with the names mentioned below. Load the files in the following way:
 
 The final command will save the data to the new database
 11. python manage.py data_migrate '/absolute/path/to/data/folder/' --settings="geonition.***"
-
-
