@@ -7,7 +7,7 @@ easy_install https://github.com/geonition/base_page/tarball/4.2.3
 easy_install https://github.com/geonition/dashboard/tarball/5.0.1
 easy_install https://github.com/geonition/planproposal/tarball/4.0.1
 easy_install https://github.com/geonition/auth_page/tarball/4.0.4
-easy_install https://github.com/geonition/geoforms/tarball/4.1.5
+easy_install https://github.com/geonition/geoforms/tarball/4.1.6
 easy_install https://github.com/geonition/geodjango-map-layers/tarball/4.0.0
 easy_install https://github.com/geonition/django_images/tarball/4.0.0
 easy_install https://github.com/geonition/django_opensocial_people/tarball/4.0.1
