@@ -6,6 +6,7 @@ from django.contrib.gis import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
+    url(r'^', include('dashboard.urls')),
     url(r'^dashboard/', include('dashboard.urls')),
     url(r'^api/client/', include('geonition_client.urls')),
     url(r'^api/opensocial_people/', include('opensocial_people.urls')),

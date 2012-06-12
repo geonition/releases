@@ -1,3 +1,5 @@
+import os
+
 # Django settings for geonition project.
 
 # If you set this to False, Django will make some optimizations so as not
@@ -137,6 +139,8 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 "django.core.context_processors.request",
 "base_page.context_processors.city"
 )
+
+TEMPLATE_DIRS = (os.path.dirname(os.path.realpath(__file__)) + '/../statics/templates')
 
 JAVASCRIPT_CLIENT_TEMPLATES = [
     'geonition_auth.jquery.js',
