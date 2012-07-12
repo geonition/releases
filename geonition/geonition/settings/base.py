@@ -49,6 +49,7 @@ MIDDLEWARE_CLASSES = (
     'geonition_utils.middleware.PreventCacheMiddleware', #should be only for REST data api
     # Uncomment the next line for simple clickjacking protection:
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'geonition_utils.middleware.IEEdgeMiddleware', #should be only for ui html/css apps
 )
 
 ROOT_URLCONF = 'geonition.urls'
@@ -157,3 +158,5 @@ from django.core.urlresolvers import reverse_lazy
 LOGIN_REDIRECT_URL = reverse_lazy('dashboard')
 LOGIN_URL = reverse_lazy('login')
 LOGOUT_URL = reverse_lazy('logout')
+
+WSGI_APPLICATION = "geonition.wsgi.application"
