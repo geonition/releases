@@ -118,7 +118,6 @@ INSTALLED_APPS = (
     'geojson_rest',
     'geonition_utils',
     'geoforms',
-    'opensocial_people',
     
     # release apps
     'manage_release',
@@ -160,3 +159,5 @@ LOGIN_URL = reverse_lazy('login')
 LOGOUT_URL = reverse_lazy('logout')
 
 WSGI_APPLICATION = "geonition.wsgi.application"
+
+MODELTRANSLATION_TRANSLATION_FILES = ('geonition.translation',)
