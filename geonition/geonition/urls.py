@@ -6,8 +6,8 @@ from django.contrib.gis import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
+    url(r'^dashboard/', include('dashboard.urls')), # remove after 1.11.2012
     url(r'^', include('dashboard.urls')),
-    url(r'^dashboard/', include('dashboard.urls')),
     url(r'^api/client/', include('geonition_client.urls')),
     url(r'^api/opensocial_people/', include('opensocial_people.urls')),
     url(r'^api/geojson/', include('geojson_rest.urls')),
