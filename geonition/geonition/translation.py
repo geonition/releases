@@ -17,10 +17,9 @@ class CitySettingTranslationOptions(TranslationOptions):
 
 translator.register(CitySetting, CitySettingTranslationOptions)
 
-#dashbaoard
+#dashboard
 class DashboardProjectTranslationOptions(TranslationOptions):
     fields = ('title',
-              'tooltip',
               'description',
               )
 

@@ -1,3 +1,5 @@
+import os
+
 # Django settings for geonition project.
 
 # If you set this to False, Django will make some optimizations so as not
@@ -47,6 +49,7 @@ MIDDLEWARE_CLASSES = (
     'geonition_utils.middleware.PreventCacheMiddleware', #should be only for REST data api
     # Uncomment the next line for simple clickjacking protection:
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'geonition_utils.middleware.IEEdgeMiddleware', #should be only for ui html/css apps
 )
 
 ROOT_URLCONF = 'geonition.urls'
@@ -115,7 +118,6 @@ INSTALLED_APPS = (
     'geojson_rest',
     'geonition_utils',
     'geoforms',
-    'opensocial_people',
     
     # release apps
     'manage_release',
@@ -138,6 +140,8 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 "base_page.context_processors.city"
 )
 
+TEMPLATE_DIRS = (os.path.dirname(os.path.realpath(__file__)) + '/../statics/templates')
+
 JAVASCRIPT_CLIENT_TEMPLATES = [
     'geonition_auth.jquery.js',
     'data_processing.jquery.js',
@@ -153,3 +157,7 @@ from django.core.urlresolvers import reverse_lazy
 LOGIN_REDIRECT_URL = reverse_lazy('dashboard')
 LOGIN_URL = reverse_lazy('login')
 LOGOUT_URL = reverse_lazy('logout')
+
+WSGI_APPLICATION = "geonition.wsgi.application"
+
+MODELTRANSLATION_TRANSLATION_FILES = ('geonition.translation',)
