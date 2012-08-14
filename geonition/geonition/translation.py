@@ -5,6 +5,7 @@ from geoforms.models import Questionnaire
 from geoforms.models import Geoform
 from geoforms.models import GeoformElement
 from geoforms.models import QuestionnaireForm
+from geoforms.models import TextElementModel
 from geoforms.models import FormElement
 
 #base_page
@@ -41,6 +42,7 @@ class GeoformElementTranslationOptions(TranslationOptions):
               'html',)
     
 translator.register(GeoformElement, GeoformElementTranslationOptions)
+translator.register(TextElementModel, GeoformElementTranslationOptions)
 
 class EmptyTranslationOptions(TranslationOptions):
     fields = ()
