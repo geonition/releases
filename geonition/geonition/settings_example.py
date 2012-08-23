@@ -1,4 +1,7 @@
-from settings import *
+from settings.base import *
+
+# Make this unique, and don't share it with anybody.
+SECRET_KEY = 'a(oav_%x)udnsh5w$=4@+pyxp93ys%c9wa8ck(=22_1d*w2gws'
 
 ADMINS = (
     ('firstname lastname', 'firstname.lastname@somewhere.com'),

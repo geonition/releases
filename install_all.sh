@@ -10,5 +10,4 @@ easy_install https://github.com/geonition/auth_page/tarball/4.0.4
 easy_install https://github.com/geonition/geoforms/tarball/master # admin improvements, DB element name + slug to 200 chars
 easy_install https://github.com/geonition/geodjango-map-layers/tarball/4.1.0
 easy_install https://github.com/geonition/django_images/tarball/master
-easy_install https://github.com/geonition/django_opensocial_people/tarball/4.0.1
 easy_install django-rosetta
