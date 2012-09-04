@@ -27,8 +27,6 @@ Finnish the migration steps:
 And now everything should be up and running.
 
 
-instead of using migrate data you can also run these SQL commands in your database:
-ALTER TABLE geoforms_geoformelement ADD COLUMN "element_type" varchar(50) NOT NULL DEFAULT 'html';
-ALTER TABLE geoforms_geoformelement ALTER COLUMN "element_type" DROP DEFAULT;
-ALTER TABLE geoforms_geoformelement ALTER COLUMN "slug" SET DATA TYPE varchar(200);
-ALTER TABLE geoforms_geoformelement ALTER COLUMN "name" SET DATA TYPE varchar(200);
+Do not use migrate data but use these SQL commands to modify your database (data migrate is supposed to be updated and do just this instead):
+ALTER TABLE geoforms_geoformelement ADD COLUMN "show_area" boolean NOT NULL DEFAULT false;
+ALTER TABLE geoforms_geoformelement ADD COLUMN "buffer_area" integer NOT NULL DEFAULT 0;
