@@ -29,4 +29,4 @@ And now everything should be up and running.
 
 Do not use migrate data but use these SQL commands to modify your database (data migrate is supposed to be updated and do just this instead):
 ALTER TABLE geoforms_questionnaire ADD COLUMN "show_area" boolean NOT NULL DEFAULT false;
-ALTER TABLE geoforms_questionnaire ADD COLUMN "buffer_area" integer NOT NULL DEFAULT 0;
+ALTER TABLE geoforms_questionnaire ADD COLUMN "scale_visible_area" integer NOT NULL DEFAULT 1;
