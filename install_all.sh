@@ -9,7 +9,7 @@ pip install https://github.com/geonition/base_page/tarball/master #meta argument
 pip install https://github.com/geonition/dashboard/tarball/master #help text and verbose names in admin, 
 pip install https://github.com/geonition/planproposal/tarball/4.2.4
 pip install https://github.com/geonition/auth_page/tarball/4.0.4
-pip install https://github.com/geonition/geoforms/tarball/master #removed old element adding forms, max amount of features per button feature added, input text space problem fixed with strip(), added textarea support
+pip install https://github.com/geonition/geoforms/tarball/master #removed old element adding forms, max amount of features per button feature added, input text space problem fixed with strip(), added textarea support, slug lengths modified and timestamps added supports japanese characters better
 pip install https://github.com/geonition/geodjango-map-layers/tarball/4.1.2
 pip install https://github.com/geonition/django_images/tarball/4.1.0
 pip install django-rosetta
