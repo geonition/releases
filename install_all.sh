@@ -9,7 +9,7 @@ pip install https://github.com/geonition/base_page/tarball/4.4.0
 pip install https://github.com/geonition/dashboard/tarball/5.1.0
 pip install https://github.com/geonition/planproposal/tarball/4.2.4
 pip install https://github.com/geonition/auth_page/tarball/4.0.4
-pip install https://github.com/geonition/geoforms/tarball/5.3.0
+pip install https://github.com/geonition/geoforms/tarball/master
 pip install https://github.com/geonition/geodjango-map-layers/tarball/4.1.2
 pip install https://github.com/geonition/django_images/tarball/4.1.0
 pip install django-rosetta
