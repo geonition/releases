@@ -92,6 +92,9 @@ LOGGING = {
 #REQUIRED AND MODIFIED
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 
+#CHANGE TEST RUNNER TO OUR OWN TO DISABLE MODELTRANSLATION TESTS
+TEST_RUNNER = 'statics.tests.GeonitionTestSuiteRunner'
+
 INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -122,7 +125,7 @@ INSTALLED_APPS = (
     
     # third party apps
     'modeltranslation',
-    'rosetta',
+#    'rosetta',
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
