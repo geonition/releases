@@ -14,7 +14,8 @@ languages, MEDIA_ROOT, EMAIL_BACKEND and other email settings
 6. set SPATIAL_REFERENCE_SYSTEM_ID to the right value (e.g. 3067)
 7. Write a javascript file with your analytics script for the installation
 8. set ANALYTICS_TEMPLATE to the template file where you have your analytics script
-9. python manage.py syncdb --settings="geonition.settings_<site>"
+9. python manage.py syncdb --settings="geonition.settings_<site>" (run this command twice, as the views of geodjango models cannot be created with custom sql,
+in django version 1.5 the python manage.py syncdb --no-initial-data can be used for the first run)
 10. python manage.py collectstatic --settings="geonition.settings_<site>"
 11. python manage.py test --settings="geonition.settings_<site>" #should pass all the tests
 
@@ -25,46 +26,3 @@ Finnish the migration steps:
 6. run python manage.py data_migrate <absolute path to data dump folder> --settings="<settings for site>"
 
 And now everything should be up and running.
-
-
-Do not use migrate data but use these SQL commands to modify your database (data migrate is supposed to be updated and do just this instead):
-/*
-diff new.sql old.sql
-<     "slug" varchar(200) NOT NULL UNIQUE,
-<     "name" varchar(200) NOT NULL,
-<     "name_fi" varchar(200),
-<     "name_sv" varchar(200),
-<     "page_type" varchar(5) NOT NULL
----
->     "slug" varchar(50) NOT NULL UNIQUE,
->     "name" varchar(50) NOT NULL,
->     "name_fi" varchar(50),
->     "name_sv" varchar(50),
->     "type" varchar(5) NOT NULL
-32,35c32,35
-<     "name" varchar(200) NOT NULL,
-<     "name_fi" varchar(200),
-<     "name_sv" varchar(200),
-<     "slug" varchar(200) NOT NULL UNIQUE,
----
->     "name" varchar(100) NOT NULL,
->     "name_fi" varchar(100),
->     "name_sv" varchar(100),
->     "slug" varchar(100) NOT NULL UNIQUE,
-*/
-
-/* geoforms_questionnaire table */
-ALTER TABLE geoforms_questionnaire ALTER slug TYPE varchar(200);
-ALTER TABLE geoforms_questionnaire ALTER name TYPE varchar(200);
-/* following lines depend on language settings */
-ALTER TABLE geoforms_questionnaire ALTER name_fi TYPE varchar(200);
-ALTER TABLE geoforms_questionnaire ALTER name_sv TYPE varchar(200);
-
-/* geoforms_geoform table */
-ALTER TABLE geoforms_geoform ALTER slug TYPE varchar(200);
-ALTER TABLE geoforms_geoform ALTER name TYPE varchar(200);
-ALTER TABLE geoforms_geoform RENAME type TO page_type;
-/* following lines depend on language settings */
-ALTER TABLE geoforms_geoform ALTER name_fi TYPE varchar(200);
-ALTER TABLE geoforms_geoform ALTER name_sv TYPE varchar(200);
-
