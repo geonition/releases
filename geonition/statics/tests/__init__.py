@@ -1,4 +1,4 @@
-from django.conf import settings
+from django.conf import global_settings, settings
 from django.test.simple import DjangoTestSuiteRunner
 from django.test.simple import build_suite, build_test
 from django.utils import unittest
@@ -15,8 +15,17 @@ class GeonitionTestSuiteRunner(DjangoTestSuiteRunner):
             # verbosity=verbosity, interactive=interactive, failfast=failfast, **kwargs)
         # self.modeltranslation = modeltranslation
 #         
-    # def setup_test_environment(self, **kwargs):
-        # super(GeonitionTestSuiteRunner, self).setup_test_environment(**kwargs)
+    def setup_test_environment(self, **kwargs):
+        super(GeonitionTestSuiteRunner, self).setup_test_environment(**kwargs)
+        
+        self.old_login_redict_url = getattr(settings, 'LOGIN_REDIRECT_URL', None)
+        self.old_login_url = getattr(settings, 'LOGIN_URL', None)
+        self.old_logout_url = getattr(settings, 'LOGOUT_URL', None)
+        
+#        settings.LOGIN_REDIRECT_URL = getattr(global_settings, 'LOGIN_REDIRECT_URL')
+#        settings.LOGIN_URL = getattr(global_settings, 'LOGIN_URL')
+#        settings.LOGOUT_URL = getattr(global_settings, 'LOGOUT_URL')
+        
         # self.old_installed_apps = getattr(settings, 'INSTALLED_APPS', None)
 #         
         # new_installed_apps= []
@@ -33,16 +42,24 @@ class GeonitionTestSuiteRunner(DjangoTestSuiteRunner):
         # print (settings.INSTALLED_APPS)
         # import ipdb; ipdb.set_trace()
 #
-    # def teardown_test_environment(self, **kwargs):
-        # super(GeonitionTestSuiteRunner, self).teardown_test_environment(**kwargs)
-        # #settings.INSTALLED_APPS = self.old_installed_apps
+    def teardown_test_environment(self, **kwargs):
+        super(GeonitionTestSuiteRunner, self).teardown_test_environment(**kwargs)
+
+        settings.LOGIN_REDIRECT_URL = self.old_login_redict_url
+        settings.LOGIN_URL = self.old_login_url
+        settings.LOGOUT_URL = self.old_logout_url
+        # settings.INSTALLED_APPS = self.old_installed_apps
         
     def build_suite(self, test_labels, extra_tests=None, **kwargs):
         # from django.db.models import get_app
         
         # suite = unittest.TestSuite()
         
-        
+        if 'auth' in test_labels or 'django.contrib.auth' in settings.INSTALLED_APPS:
+            settings.LOGIN_REDIRECT_URL = getattr(global_settings, 'LOGIN_REDIRECT_URL')
+            settings.LOGIN_URL = getattr(global_settings, 'LOGIN_URL')
+            settings.LOGOUT_URL = getattr(global_settings, 'LOGOUT_URL')
+            
         if test_labels:
             return super(GeonitionTestSuiteRunner, self).build_suite(
                      test_labels, extra_tests=extra_tests, **kwargs)
