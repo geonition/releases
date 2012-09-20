@@ -137,7 +137,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 "django.core.context_processors.tz",
 "django.contrib.messages.context_processors.messages",
 "django.core.context_processors.request",
-"base_page.context_processors.city"
+"base_page.context_processors.organization"
 )
 
 TEMPLATE_DIRS = (os.path.dirname(os.path.realpath(__file__)) + '/../statics/templates')

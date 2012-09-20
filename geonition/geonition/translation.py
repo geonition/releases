@@ -1,5 +1,5 @@
 from modeltranslation.translator import translator, TranslationOptions
-from base_page.models import CitySetting
+from base_page.models import OrganizationSetting
 from dashboard.models import Project as DashboardProject
 from geoforms.models import Questionnaire
 from geoforms.models import Geoform
@@ -9,14 +9,14 @@ from geoforms.models import TextElementModel
 from geoforms.models import FormElement
 
 #base_page
-class CitySettingTranslationOptions(TranslationOptions):
-    fields = ('city_name',
+class OrganizationSettingTranslationOptions(TranslationOptions):
+    fields = ('organization_name',
               'title',
               'blurb',
               'provider',
               )
 
-translator.register(CitySetting, CitySettingTranslationOptions)
+translator.register(OrganizationSetting, OrganizationSettingTranslationOptions)
 
 #dashboard
 class DashboardProjectTranslationOptions(TranslationOptions):
