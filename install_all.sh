@@ -1,7 +1,7 @@
 # Installs modeltranslation from svn repository to prevent XMLField error in test
 pip install svn+http://django-modeltranslation.googlecode.com/svn/trunk/@139
 pip install https://github.com/geonition/django_geonition_utils/tarball/4.2.0
-pip install https://github.com/geonition/django_auth/tarball/4.0.1
+pip install https://github.com/geonition/django_auth/tarball/master #Fixed tests
 pip install https://github.com/geonition/django_geojson_rest/tarball/5.3.1
 pip install https://github.com/geonition/django_opensocial_people/tarball/4.0.1
 pip install https://github.com/geonition/django_geonition_client/tarball/4.0.0
