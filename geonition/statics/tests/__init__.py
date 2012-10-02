@@ -2,11 +2,16 @@ from django.conf import global_settings, settings
 from django.test.simple import DjangoTestSuiteRunner
 from django.test.simple import build_suite, build_test
 from django.utils import unittest
+from django.db.models.loading import get_models
+from django.core.management import call_command
 
 from optparse import make_option
 
 class GeonitionTestSuiteRunner(DjangoTestSuiteRunner):
-    # option_list = (
+    """
+    This testrunner makes some settings changes to make Django tests pass
+    """
+        # option_list = (
         # make_option('--modeltranslation', action='store_true', default=False,
             # help='Test modeltranslation application, default is False'),
     # )
@@ -16,6 +21,7 @@ class GeonitionTestSuiteRunner(DjangoTestSuiteRunner):
         # self.modeltranslation = modeltranslation
 #         
     def setup_test_environment(self, **kwargs):
+        
         super(GeonitionTestSuiteRunner, self).setup_test_environment(**kwargs)
         
         self.old_login_redict_url = getattr(settings, 'LOGIN_REDIRECT_URL', None)
@@ -50,6 +56,7 @@ class GeonitionTestSuiteRunner(DjangoTestSuiteRunner):
         settings.LOGOUT_URL = self.old_logout_url
         # settings.INSTALLED_APPS = self.old_installed_apps
         
+        
     def build_suite(self, test_labels, extra_tests=None, **kwargs):
         # from django.db.models import get_app
         
@@ -75,4 +82,17 @@ class GeonitionTestSuiteRunner(DjangoTestSuiteRunner):
                  tuple(new_test_labels), extra_tests=extra_tests, **kwargs)
             
         
-        
+    def setup_databases(self, **kwargs):
+        old_names, mirrors = super(GeonitionTestSuiteRunner, self).setup_databases(**kwargs)
+
+        #Call syncdb second time to create custom views with geometrycolumn
+        #First run still gives sql errors about geometrycolumns
+        # Get correct connection object
+        con = old_names[0][0] 
+        call_command('syncdb',
+            verbosity=max(self.verbosity - 1, 0),
+            interactive=False,
+            database=con.alias,
+            load_initial_data=False)
+                        
+        return old_names, mirrors
