@@ -28,10 +28,5 @@ Finnish the migration steps:
 And now everything should be up and running.
 
 /* For the current release use these DB ALTER scripts */
-ALTER TABLE base_page_citysetting RENAME TO base_page_organizationsetting;
-ALTER TABLE base_page_organizationsetting RENAME city_name TO organization_name;
-ALTER TABLE base_page_organizationsetting RENAME city_name_fi TO organization_name_fi;
-ALTER TABLE base_page_organizationsetting RENAME city_name_sv TO organization_name_sv;
-ALTER TABLE base_page_organizationsetting RENAME city_area TO service_area;
-
+This version does not include any DB changes
 
