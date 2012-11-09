@@ -1,0 +1,13 @@
+-e git+ssh://git@github.com/geonition/auth_page.git@4.0.4#egg=auth-page
+-e git+ssh://git@github.com/geonition/base_page.git@4.6.1#egg=base-page
+-e git+ssh://git@github.com/geonition/dashboard.git@5.2.0#egg=dashboard
+-e git+ssh://git@github.com/geonition/geoforms.git@master#egg=geoforms
+-e git+ssh://git@github.com/geonition/django_geojson_rest.git@master#egg=geojson_rest
+-e git+ssh://git@github.com/geonition/django_geonition_client.git@4.0.0#egg=geonition-client
+-e git+ssh://git@github.com/geonition/django_geonition_utils.git@4.3.0#egg=geonition-utils
+-e git+ssh://git@github.com/geonition/django_auth.git@4.1.0#egg=gntauth
+-e git+ssh://git@github.com/geonition/django_images.git@4.1.0#egg=gntimages
+-e git+ssh://git@github.com/geonition/geodjango-map-layers@master#egg=maps
+-e git+ssh://git@github.com/geonition/django_opensocial_people@4.0.1#egg=opensocial-people
+-e git+ssh://git@github.com/geonition/planproposal@4.3.0#egg=plan-proposals
+
