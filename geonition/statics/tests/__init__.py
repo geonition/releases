@@ -115,7 +115,7 @@ if 'django_jenkins' in settings.INSTALLED_APPS:
     #         
         def setup_test_environment(self, **kwargs):
             
-            super(GeonitionTestSuiteRunner, self).setup_test_environment(**kwargs)
+            super(GeonitionJenkinsTestSuiteRunner, self).setup_test_environment(**kwargs)
             
             self.old_login_redict_url = getattr(settings, 'LOGIN_REDIRECT_URL', None)
             self.old_login_url = getattr(settings, 'LOGIN_URL', None)
@@ -142,7 +142,7 @@ if 'django_jenkins' in settings.INSTALLED_APPS:
             # import ipdb; ipdb.set_trace()
     #
         def teardown_test_environment(self, **kwargs):
-            super(GeonitionTestSuiteRunner, self).teardown_test_environment(**kwargs)
+            super(GeonitionJenkinsTestSuiteRunner, self).teardown_test_environment(**kwargs)
     
             settings.LOGIN_REDIRECT_URL = self.old_login_redict_url
             settings.LOGIN_URL = self.old_login_url
@@ -161,7 +161,7 @@ if 'django_jenkins' in settings.INSTALLED_APPS:
                 settings.LOGOUT_URL = getattr(global_settings, 'LOGOUT_URL')
                 
             if test_labels:
-                return super(GeonitionTestSuiteRunner, self).build_suite(
+                return super(GeonitionJenkinsTestSuiteRunner, self).build_suite(
                          test_labels, extra_tests=extra_tests, **kwargs)
     
             new_test_labels = []
@@ -171,12 +171,12 @@ if 'django_jenkins' in settings.INSTALLED_APPS:
                 if not app_name == 'modeltranslation':
                     new_test_labels.append(app_name)
     
-            return super(GeonitionTestSuiteRunner, self).build_suite(
+            return super(GeonitionJenkinsTestSuiteRunner, self).build_suite(
                      tuple(new_test_labels), extra_tests=extra_tests, **kwargs)
                 
             
         def setup_databases(self, **kwargs):
-            old_names, mirrors = super(GeonitionTestSuiteRunner, self).setup_databases(**kwargs)
+            old_names, mirrors = super(GeonitionJenkinsTestSuiteRunner, self).setup_databases(**kwargs)
     
             #Call syncdb second time to create custom views with geometrycolumn
             #First run still gives sql errors about geometrycolumns
