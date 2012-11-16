@@ -83,5 +83,20 @@ ORGANIZATION_ADMIN_DEFAULT_MAP_SETTINGS = {'default_lon': 0,
                                            'default_zoom': 4}
 # for django-jenkins
 INSTALLED_APPS += ('django_jenkins',)
+INSTALLED_APPS += ('django_extensions',)
 PROJECT_APPS = [appname for appname in INSTALLED_APPS if not (appname.startswith('django') or appname.startswith('modeltranslation'))]
 JENKINS_TEST_RUNNER = 'statics.tests.GeonitionJenkinsTestSuiteRunner'
+JENKINS_TASKS = (
+		'django_jenkins.tasks.with_coverage',
+		'django_jenkins.tasks.run_pylint',
+		'django_jenkins.tasks.django_tests',   # select one django or
+		#'django_jenkins.tasks.dir_tests'      # directory tests discovery
+		'django_jenkins.tasks.run_pep8',
+#		'django_jenkins.tasks.run_pyflakes',
+		'django_jenkins.tasks.run_jshint',
+#		'django_jenkins.tasks.run_csslint',    
+#		'django_jenkins.tasks.run_sloccount',
+		'django_jenkins.tasks.run_graphmodels',   
+#		'django_jenkins.tasks.lettuce_tests',
+)
+
