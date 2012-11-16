@@ -1,6 +1,6 @@
 django
 pep8
-django-extension
+django-extensions
 pygraphviz
 -e git+git://github.com/kmmbvnr/django-jenkins.git#egg=django-jenkins
 -e git+git://github.com/geonition/auth_page.git@master#egg=auth-page
