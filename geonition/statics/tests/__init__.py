@@ -99,7 +99,8 @@ class GeonitionTestSuiteRunner(DjangoTestSuiteRunner):
 
 # create django_jenkins testrunner, there might be a better way to check if django_jenkis is in installed apps
 if 'django_jenkins' in settings.INSTALLED_APPS:
-    class GeonitionJenkinsTestSuiteRunner(django_jenkins.runner.CITestSuiteRunner):
+    from django_jenkins.runner import CITestSuiteRunner
+    class GeonitionJenkinsTestSuiteRunner(CITestSuiteRunner):
         """
         This testrunner makes some settings changes to make Django tests pass
         """
