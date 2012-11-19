@@ -16,7 +16,7 @@ DATABASES = {
         'USER': 'test_user',                      # Not used with sqlite3.
         'PASSWORD': 'test_pw',               # Not used with sqlite3.
         'HOST': 'localhost',                      # Set to empty string for localhost. Not used with sqlite3.
-        'PORT': '5433',                      # Set to empty string for default. Not used with sqlite3.
+        'PORT': '5432',                      # Set to empty string for default. Not used with sqlite3.
     }
 }
 
@@ -87,16 +87,16 @@ INSTALLED_APPS += ('django_extensions',)
 PROJECT_APPS = [appname for appname in INSTALLED_APPS if not (appname.startswith('django') or appname.startswith('modeltranslation'))]
 JENKINS_TEST_RUNNER = 'statics.tests.GeonitionJenkinsTestSuiteRunner'
 JENKINS_TASKS = (
-		'django_jenkins.tasks.with_coverage',
-		'django_jenkins.tasks.run_pylint',
-		'django_jenkins.tasks.django_tests',   # select one django or
-		#'django_jenkins.tasks.dir_tests'      # directory tests discovery
-		'django_jenkins.tasks.run_pep8',
+        'django_jenkins.tasks.with_coverage',
+        'django_jenkins.tasks.run_pylint',
+        'django_jenkins.tasks.django_tests',   # select one django or
+        #'django_jenkins.tasks.dir_tests'      # directory tests discovery
+        'django_jenkins.tasks.run_pep8',
 #		'django_jenkins.tasks.run_pyflakes',
-		'django_jenkins.tasks.run_jshint',
+        'django_jenkins.tasks.run_jshint',
 #		'django_jenkins.tasks.run_csslint',    
 #		'django_jenkins.tasks.run_sloccount',
-		'django_jenkins.tasks.run_graphmodels',   
+        'django_jenkins.tasks.run_graphmodels',   
 #		'django_jenkins.tasks.lettuce_tests',
 )
 
