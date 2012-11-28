@@ -31,6 +31,7 @@ And now everything should be up and running.
 geodjango-map-layers has gone trough major database schema change.
 No DB ALTER script at the moment.
 Best way to deal it is to drop following tables
+Make notes of the current maps and layers
 DROP TABLE maps_map_layers CASCADE;
 DROP TABLE maps_layer CASCADE;
 DROP TABLE maps_map CASCADE;
@@ -38,3 +39,4 @@ DROP TABLE maps_map CASCADE;
 and run
 python manage.py syncdb --settings="geonition.settings_<site>" to re-create necessary tables
 
+Create maps and layers again from notes made before.
