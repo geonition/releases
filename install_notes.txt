@@ -28,5 +28,13 @@ Finnish the migration steps:
 And now everything should be up and running.
 
 /* For the current release use these DB ALTER scripts */
-This version does not include any DB changes
+geodjango-map-layers has gone trough major database schema change.
+No DB ALTER script at the moment.
+Best way to deal it is to drop following tables
+DROP TABLE maps_map_layers CASCADE;
+DROP TABLE maps_layer CASCADE;
+DROP TABLE maps_map CASCADE;
+
+and run
+python manage.py syncdb --settings="geonition.settings_<site>" to re-create necessary tables
 
