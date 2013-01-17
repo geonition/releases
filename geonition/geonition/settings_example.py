@@ -22,7 +22,9 @@ DATABASES = {
 
 MEDIA_ROOT = ''
 
-SPATIAL_REFERENCE_SYSTEM_ID = 3067
+# Default is 4326(WGS84). This is here for backwards compatibility
+# For new installations keep this unchanged, unless you know what you are doing.  
+SPATIAL_REFERENCE_SYSTEM_ID = 4326
 
 LANGUAGES = (('en', 'English'),)
 
