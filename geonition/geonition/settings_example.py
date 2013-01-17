@@ -30,6 +30,10 @@ LANGUAGES = (('en', 'English'),)
 # http://www.i18nguy.com/unicode/language-identifiers.html
 LANGUAGE_CODE = 'en'
 
+# If using language not in Django base translation set this to directory
+# where translations are located
+# LOCALE_PATHS = ()
+ 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
 # although not all choices may be available on all operating systems.

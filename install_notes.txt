@@ -10,14 +10,15 @@ STEP BY STEP:
 3. create a settings_<site>.py file for the site you are going to use
 4. add to settings_<site>.py database, admins, debug, time_zone, language_code,
 languages, MEDIA_ROOT, EMAIL_BACKEND and other email settings
-5. copy gntimages (base images) to MEDIA_ROOT
-6. set SPATIAL_REFERENCE_SYSTEM_ID to the right value (e.g. 3067)
-7. Write a javascript file with your analytics script for the installation
-8. set ANALYTICS_TEMPLATE to the template file where you have your analytics script
-9. python manage.py syncdb --settings="geonition.settings_<site>" (run this command twice, as the views of geodjango models cannot be created with custom sql,
+5. If language not in Django-base languages set LOCALE_PATHS setting
+6. copy gntimages (base images) to MEDIA_ROOT
+7. set SPATIAL_REFERENCE_SYSTEM_ID to the right value (e.g. 3067)
+8. Write a javascript file with your analytics script for the installation
+9. set ANALYTICS_TEMPLATE to the template file where you have your analytics script
+10. python manage.py syncdb --settings="geonition.settings_<site>" (run this command twice, as the views of geodjango models cannot be created with custom sql,
 in django version 1.5 the python manage.py syncdb --no-initial-data can be used for the first run)
-10. python manage.py collectstatic --settings="geonition.settings_<site>"
-11. python manage.py test --settings="geonition.settings_<site>" #should pass all the tests
+11. python manage.py collectstatic --settings="geonition.settings_<site>"
+12. python manage.py test --settings="geonition.settings_<site>" #should pass all the tests
 
 Finnish the migration steps:
 3. Drop the rows in dashboard_project tooltip*
