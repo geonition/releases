@@ -16,6 +16,6 @@ jsmin==2.0.2
 lxml==3.1beta1
 -e git://github.com/geonition/geodjango-map-layers@f4fc687b007130f88a3f0a8c67a75b8873e502e6#egg=maps-dev
 -e git://github.com/geonition/django_opensocial_people@4044428722661500652d750d66ca84abcbfb9a25#egg=opensocial_people-dev
--e git://github.com/geonition/planproposal@2fae78364f778d9a86b9cd87ba9468e31020846a#egg=plan_proposals-dev
+-e git://github.com/geonition/planproposal@c6ab1573fa6c851351845ef2f8dcd4e3c62a7ecb#egg=plan_proposals-dev
 psycopg2==2.4.6
 pymongo==2.4.1
