@@ -28,7 +28,9 @@ translator.register(DashboardProject, DashboardProjectTranslationOptions)
 
 #geoforms
 class QuestionnaireTranslationOptions(TranslationOptions):
-    fields = ('name',)
+    fields = ('name',
+              'description',
+              )
     
 translator.register(Questionnaire, QuestionnaireTranslationOptions)
 

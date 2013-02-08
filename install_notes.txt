@@ -42,6 +42,8 @@ DB ALTER commands
 ALTER TABLE geoforms_questionnaire ADD COLUMN "start_date" date;
 ALTER TABLE geoforms_questionnaire ADD COLUMN "end_date" date;
 ALTER TABLE geoforms_questionnaire ADD COLUMN "map" varchar(50);
+ALTER TABLE geoforms_questionnaire ADD COLUMN "description" text NOT NULL DEFAULT '';
+python manage.py sync_translation_fields --settings="geonition.settings_<site>"
 
 and run
 python manage.py syncdb --settings="geonition.settings_<site>" to re-create necessary tables
