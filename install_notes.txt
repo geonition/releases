@@ -37,6 +37,12 @@ DROP TABLE maps_map_layers CASCADE;
 DROP TABLE maps_layer CASCADE;
 DROP TABLE maps_map CASCADE;
 
+Questionnaire start and end dates are added to the geoforms application
+DB ALTER commands
+ALTER TABLE geoforms_questionnaire ADD COLUMN "start_date" date;
+ALTER TABLE geoforms_questionnaire ADD COLUMN "end_date" date;
+ALTER TABLE geoforms_questionnaire ADD COLUMN "map" varchar(50);
+
 and run
 python manage.py syncdb --settings="geonition.settings_<site>" to re-create necessary tables
 
