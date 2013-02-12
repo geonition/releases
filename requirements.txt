@@ -6,8 +6,8 @@ Shapely==1.2.16
 beautifulsoup4==4.1.3
 -e git://github.com/geonition/dashboard.git@76133bf467d4e7d899aebe2b032f1ed6955f96da#egg=dashboard-dev
 django-modeltranslation==0.4.1
--e git://github.com/geonition/geoforms.git@67973dd931a705e56e43e98182176b8500aae828#egg=geoforms-dev
--e git://github.com/geonition/django_geojson_rest.git@0e8af1ede86863e022dd247422e70dd3f03427d0#egg=geojson_rest-dev
+-e git://github.com/geonition/geoforms.git@1279c2bac79433505ddd374c25ad27c0659b4802#egg=geoforms-dev
+-e git://github.com/geonition/django_geojson_rest.git@52e43fbdec0cb5ee7689b7fe90747950c766e000#egg=geojson_rest-dev
 -e git://github.com/geonition/django_geonition_client.git@fb5d4573a5be2ac5be8e572357619ee845e3bcc1#egg=geonition_client-dev
 -e git://github.com/geonition/django_geonition_utils.git@e4669b33cff12a0de4df988cad403f419d0e6229#egg=geonition_utils-dev
 -e git://github.com/geonition/django_auth.git@dd3ecb3f81554b934cd0964dde848c8140e0e14c#egg=gntauth-dev
@@ -16,6 +16,6 @@ jsmin==2.0.2
 lxml==3.1beta1
 -e git://github.com/geonition/geodjango-map-layers@054a3cd7826e26ed03f2d6a66e94cd176acf48d1#egg=maps-dev
 -e git://github.com/geonition/django_opensocial_people@4044428722661500652d750d66ca84abcbfb9a25#egg=opensocial_people-dev
--e git://github.com/geonition/planproposal@5936a60f8423c88a326a76176bc3fa12d88e7493#egg=plan_proposals-dev
+-e git://github.com/geonition/planproposal@c46280cdddfd1692eb9feaf5cbeec5c5334631de#egg=plan_proposals-dev
 psycopg2==2.4.6
 pymongo==2.4.1
