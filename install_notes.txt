@@ -6,7 +6,7 @@ with the names mentioned below. Load the files in the following way:
 
 STEP BY STEP:
 1. git clone releases from github
-2. sh install_all.sh --> installs django and everything
+2. pip install -r requirements.txt
 3. create a settings_<site>.py file for the site you are going to use
 4. add to settings_<site>.py database, admins, debug, time_zone, language_code,
 languages, MEDIA_ROOT, EMAIL_BACKEND and other email settings
