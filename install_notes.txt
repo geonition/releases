@@ -1,3 +1,5 @@
+Before installing the geonition packages make sure that you have installed geoDjango and the required dependencies for geoDjango.
+
 To migrate data from previous version dump the data into the data folder
 with the names mentioned below. Load the files in the following way:
 
