@@ -72,6 +72,9 @@ POSTGIS_TEMPLATE = 'postgis_template'
 
 EMAIL_BACKEND = 'django.core.mail.backends.dummy.EmailBackend'
 
+#Google api
+GOOGLE_API_KEY = ''
+
 ORGANIZATION_ADMIN_DEFAULT_MAP_SETTINGS = {'default_lon': 0,
                                            'default_lat': 0,
                                            'default_zoom': 4}
