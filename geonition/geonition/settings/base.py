@@ -150,6 +150,9 @@ JAVASCRIPT_CLIENT_TEMPLATES = [
     'questionnaire.api.js'
 ]
 
+#Google api
+GOOGLE_API_KEY = ''
+
 #MODEL TRANSLATION
 MODELTRANSLATION_TRANSLATION_REGISTRY = "geonition.translation"
 
