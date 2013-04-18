@@ -32,13 +32,14 @@ Finnish the migration steps:
 And now everything should be up and running.
 
 /* For the current release use these DB ALTER scripts */
-geodjango-map-layers has gone trough major database schema change.
-No DB ALTER script at the moment.
-Best way to deal it is to drop following tables
-Make notes of the current maps and layers
-DROP TABLE maps_map_layers CASCADE;
-DROP TABLE maps_layer CASCADE;
-DROP TABLE maps_map CASCADE;
+
+Attribution is added to the maps application
+ALTER TABLE maps_layer ADD COLUMN "attr_title" varchar(100) NOT NULL DEFAULT '';
+ALTER TABLE maps_layer ADD COLUMN "attr_url" varchar(200) NOT NULL DEFAULT '';
+ALTER TABLE maps_layer ADD COLUMN "attr_logo_url" varchar(200) NOT NULL DEFAULT '';
+ALTER TABLE maps_layer ADD COLUMN "attr_logo_format" varchar(30) NOT NULL DEFAULT '';
+ALTER TABLE maps_layer ADD COLUMN "attr_logo_height" integer;
+ALTER TABLE maps_layer ADD COLUMN "attr_logo_width" integer;
 
 Questionnaire start and end dates are added to the geoforms application
 DB ALTER commands
@@ -46,9 +47,20 @@ ALTER TABLE geoforms_questionnaire ADD COLUMN "start_date" date;
 ALTER TABLE geoforms_questionnaire ADD COLUMN "end_date" date;
 ALTER TABLE geoforms_questionnaire ADD COLUMN "map" varchar(50);
 ALTER TABLE geoforms_questionnaire ADD COLUMN "description" text NOT NULL DEFAULT '';
+SELECT AddGeometryColumn('geoforms_questionnaire', 'annotation_areas', 4326, 'MULTIPOLYGON', 2);
+CREATE INDEX "geoforms_questionnaire_annotation_areas_id" ON "geoforms_questionnaire" USING GIST ( "annotation_areas" GIST_GEOMETRY_OPS );
 python manage.py sync_translation_fields --settings="geonition.settings_<site>"
+
+Questionnaire start and end dates are added to the planproposals application
+DB ALTER commands
+ALTER TABLE plan_proposals_planningproject ADD COLUMN "start_date" date;
+ALTER TABLE plan_proposals_planningproject ADD COLUMN "end_date" date;
+ALTER TABLE plan_proposals_planningproject ADD COLUMN "map" varchar(50);
+ALTER TABLE plan_proposals_planningproject ADD COLUMN "description" text NOT NULL DEFAULT '';
+python manage.py sync_translation_fields --settings="geonition.settings_<site>"
+
 
 and run
 python manage.py syncdb --settings="geonition.settings_<site>" to re-create necessary tables
 
-Create maps and layers again from notes made before.
+
