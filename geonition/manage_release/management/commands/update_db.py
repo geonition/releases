@@ -36,8 +36,9 @@ class Command(NoArgsCommand):
                 try:
                     cursor.execute(sql)
                 except Exception as e:
-                    #import ipdb; ipdb.set_trace()
+#                    import ipdb; ipdb.set_trace()
 #                    self.stdout.write(sql)
+                    self.stderr.write(e.message)
                     self.stderr.write("Database for application %s is allready updated.\n" % cur_app)
                     transaction.rollback_unless_managed(using=db)
                     break
