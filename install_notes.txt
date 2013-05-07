@@ -23,44 +23,17 @@ in django version 1.5 the python manage.py syncdb --no-initial-data can be used 
 12. python manage.py collectstatic --settings="geonition.settings_<site>"
 13. python manage.py test --settings="geonition.settings_<site>" #should pass all the tests
 
-Finnish the migration steps:
-3. Drop the rows in dashboard_project tooltip*
-4. Add a new row in dashboard_project called modify_date with default now() and NOT NULL
-5. Remove the default now() option
-6. run python manage.py data_migrate <absolute path to data dump folder> --settings="<settings for site>"
+IMPORTANT!
+Some REDHAT Linux releases are lacking correct lxml version. In that case run the following command:
+CFLAGS=-fPIC STATICBUILD=true LIBXML2_VERSION=2.8.0 pip install lxml
+
+There can be some database schema changes in this release so alway run the followin commands after syncdb.
+1. python manage.py update_db --settings="geonition.settings_<site>"
+2. python manage.py sync_translation_fields --settings="geonition.settings_<site>"
+
 
 And now everything should be up and running.
 
-/* For the current release use these DB ALTER scripts */
 
-Attribution is added to the maps application
-ALTER TABLE maps_layer ADD COLUMN "attr_title" varchar(100) NOT NULL DEFAULT '';
-ALTER TABLE maps_layer ADD COLUMN "attr_url" varchar(200) NOT NULL DEFAULT '';
-ALTER TABLE maps_layer ADD COLUMN "attr_logo_url" varchar(200) NOT NULL DEFAULT '';
-ALTER TABLE maps_layer ADD COLUMN "attr_logo_format" varchar(30) NOT NULL DEFAULT '';
-ALTER TABLE maps_layer ADD COLUMN "attr_logo_height" integer;
-ALTER TABLE maps_layer ADD COLUMN "attr_logo_width" integer;
-
-Questionnaire start and end dates are added to the geoforms application
-DB ALTER commands
-ALTER TABLE geoforms_questionnaire ADD COLUMN "start_date" date;
-ALTER TABLE geoforms_questionnaire ADD COLUMN "end_date" date;
-ALTER TABLE geoforms_questionnaire ADD COLUMN "map" varchar(50);
-ALTER TABLE geoforms_questionnaire ADD COLUMN "description" text NOT NULL DEFAULT '';
-SELECT AddGeometryColumn('geoforms_questionnaire', 'annotation_areas', 4326, 'MULTIPOLYGON', 2);
-CREATE INDEX "geoforms_questionnaire_annotation_areas_id" ON "geoforms_questionnaire" USING GIST ( "annotation_areas" GIST_GEOMETRY_OPS );
-python manage.py sync_translation_fields --settings="geonition.settings_<site>"
-
-Questionnaire start and end dates are added to the planproposals application
-DB ALTER commands
-ALTER TABLE plan_proposals_planningproject ADD COLUMN "start_date" date;
-ALTER TABLE plan_proposals_planningproject ADD COLUMN "end_date" date;
-ALTER TABLE plan_proposals_planningproject ADD COLUMN "map" varchar(50);
-ALTER TABLE plan_proposals_planningproject ADD COLUMN "description" text NOT NULL DEFAULT '';
-python manage.py sync_translation_fields --settings="geonition.settings_<site>"
-
-
-and run
-python manage.py syncdb --settings="geonition.settings_<site>" to re-create necessary tables
 
 
