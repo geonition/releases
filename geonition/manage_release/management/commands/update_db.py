@@ -4,6 +4,7 @@ from django.core.management.base import NoArgsCommand, CommandError
 from django.core.management.color import no_style
 from django.db import models, DEFAULT_DB_ALIAS
 from django.db import connections, transaction
+from django.conf import settings
 #from geojson_rest.sql import *
 from manage_release.schema_update import schema_changes
 
@@ -29,48 +30,19 @@ class Command(NoArgsCommand):
         
         for app in apps:
             cur_app = app[0]
-            print ('SQL to execute for application %s:' % cur_app)
-#            for sql in app[1]:
-#                print sql
-            for sql in app[1]:
-                try:
-                    cursor.execute(sql)
-                except Exception as e:
-#                    import ipdb; ipdb.set_trace()
-#                    self.stdout.write(sql)
-                    self.stderr.write(e.message)
-                    self.stderr.write("SQL: {} for application {} is allready applied.\n".format(sql, cur_app))
-                    transaction.rollback_unless_managed(using=db)
-            transaction.commit_unless_managed(using=db)            
-            print('--------------------------------------------------------------------------------------')
+            if cur_app in settings.INSTALLED_APPS:
+                print ('SQL to execute for application %s:' % cur_app)
+    #            for sql in app[1]:
+    #                print sql
+                for sql in app[1]:
+                    try:
+                        cursor.execute(sql)
+                    except Exception as e:
+    #                    import ipdb; ipdb.set_trace()
+    #                    self.stdout.write(sql)
+                        self.stderr.write(e.message)
+                        self.stderr.write("SQL: {} for application {} is allready applied.\n".format(sql, cur_app))
+                        transaction.rollback_unless_managed(using=db)
+                transaction.commit_unless_managed(using=db)            
+                print('--------------------------------------------------------------------------------------')
                 
-            
-        
-        
-        # Create customs views for geojson_rest
-#         if 'geojson_rest' in settings.INSTALLED_APPS:
-#             app = models.get_app('geojson_rest')
-#             app_models = models.get_models(app, include_auto_created=True)
-#             tables = connection.introspection.table_names()
-#             converter = connection.introspection.table_name_converter
-#             import ipdb; ipdb.set_trace()
-#             
-#             custom_sql = sql_custom(models.get_app('geojson_rest'), no_style, connection)
-#             
-#             #self.stdout.write(custom_sql)
-#             if custom_sql:
-#                 cursor = connection.cursor()
-#                 try:
-#                     for sql in custom_sql:
-#                         cursor.execute(sql)
-#                 except Exception as e:
-#                     self.stdout.write(sql)
-#                     self.stderr.write("Failed to install custom SQL for geojson_rest: %s\n" % e)
-#                     transaction.rollback_unless_managed(using=db)
-#                 else:
-#                     transaction.commit_unless_managed(using=db)            
-# 
-#         # Load initial_data fixtures (unless that has been disabled)
-#         if orig_load_initial_data:
-#             call_command('loaddata', 'initial_data', verbosity=verbosity,
-#                          database=db, skip_validation=True)            
