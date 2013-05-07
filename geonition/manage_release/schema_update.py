@@ -12,8 +12,9 @@ schema_changes = [('master', (
         "ALTER TABLE geoforms_questionnaire ADD COLUMN end_date date;",
         "ALTER TABLE geoforms_questionnaire ADD COLUMN map varchar(50);",
         "ALTER TABLE geoforms_questionnaire ADD COLUMN description text NOT NULL DEFAULT '';",
-        "SELECT AddGeometryColumn('geoforms_questionnaire', 'annotation_areas', (select find_srid('public', 'geoforms_questionnaire','area')), 'MULTIPOLYGON', 2);",
-        "CREATE INDEX geoforms_questionnaire_annotation_areas_id ON geoforms_questionnaire USING GIST ( annotation_areas GIST_GEOMETRY_OPS );",]
+        "ALTER TABLE geoforms_questionnaire ADD COLUMN show_detailed_areas boolean NOT NULL DEFAULT FALSE;",
+        "SELECT AddGeometryColumn('geoforms_questionnaire', 'detailed_areas', (select find_srid('public', 'geoforms_questionnaire','area')), 'MULTIPOLYGON', 2);",
+        "CREATE INDEX geoforms_questionnaire_detailed_areas_id ON geoforms_questionnaire USING GIST ( detailed_areas GIST_GEOMETRY_OPS );",]
     ),
     ('plan_proposals', [
         "ALTER TABLE plan_proposals_planningproject ADD COLUMN start_date date;",

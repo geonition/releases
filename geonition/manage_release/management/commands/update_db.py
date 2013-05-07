@@ -10,7 +10,7 @@ from manage_release.schema_update import schema_changes
 class Command(NoArgsCommand):
     option_list = NoArgsCommand.option_list + (
         make_option('--database', action='store', dest='database',
-            default=DEFAULT_DB_ALIAS, help='Nominates a database to synchronize. '
+            default=DEFAULT_DB_ALIAS, help='Nominates a database to update. '
                 'Defaults to the "default" database.'),
     )
     def handle_noargs(self, **options):
@@ -30,8 +30,8 @@ class Command(NoArgsCommand):
         for app in apps:
             cur_app = app[0]
             print ('SQL to execute for application %s:' % cur_app)
-            for sql in app[1]:
-                print sql
+#            for sql in app[1]:
+#                print sql
             for sql in app[1]:
                 try:
                     cursor.execute(sql)
@@ -39,9 +39,8 @@ class Command(NoArgsCommand):
 #                    import ipdb; ipdb.set_trace()
 #                    self.stdout.write(sql)
                     self.stderr.write(e.message)
-                    self.stderr.write("Database for application %s is allready updated.\n" % cur_app)
+                    self.stderr.write("SQL: {} for application {} is allready applied.\n".format(sql, cur_app))
                     transaction.rollback_unless_managed(using=db)
-                    break
             transaction.commit_unless_managed(using=db)            
             print('--------------------------------------------------------------------------------------')
                 
