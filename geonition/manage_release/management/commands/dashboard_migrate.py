@@ -21,8 +21,8 @@ class Command(NoArgsCommand):
         questionnaires = Questionnaire.on_site.all()
         
         self.stdout.write('Found:\n')
-        self.stdout.write('{} project(s)\n'.format(len(projects)))
-        self.stdout.write('{} questionnaire(s)\n'.format(len(questionnaires)))
+        self.stdout.write('{1} project(s)\n'.format(len(projects)))
+        self.stdout.write('{1} questionnaire(s)\n'.format(len(questionnaires)))
 
         if len(projects) == 0 or len(questionnaires) == 0:
             self.stderr.write('No projects or questionnaires found, exiting')
@@ -53,5 +53,5 @@ class Command(NoArgsCommand):
             quest.save()
             updated_questionnaires =+ 1
             
-        self.stdout.write('Updated {} questionnaire(s)'.format(updated_questionnaires))
+        self.stdout.write('Updated {1} questionnaire(s)'.format(updated_questionnaires))
             
