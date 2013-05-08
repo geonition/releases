@@ -2,7 +2,7 @@ Django==1.4.5
 PIL==1.1.7
 Shapely==1.2.16
 -e git://github.com/geonition/auth_page.git@329de84b92d14ee50318a1ed7076c4ff6bd2b1e3#egg=auth_page-dev
--e git://github.com/geonition/base_page.git@bd323b53aa086ca0bdb07a572c00df466b5d4530#egg=base_page-dev
+-e git://github.com/geonition/base_page.git@ed3cda6d6eaba7bed647acf3f1133297362c012a#egg=base_page-dev
 beautifulsoup4==4.1.3
 -e git://github.com/geonition/dashboard.git@16c945e2760f7fe20205921677bc075a1bb6c171#egg=dashboard-dev
 django-modeltranslation==0.5
