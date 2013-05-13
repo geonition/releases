@@ -20,7 +20,11 @@ schema_changes = [('master', (
         "ALTER TABLE plan_proposals_planningproject ADD COLUMN start_date date;",
         "ALTER TABLE plan_proposals_planningproject ADD COLUMN end_date date;",
         "ALTER TABLE plan_proposals_planningproject ADD COLUMN map varchar(50);",
-        "ALTER TABLE plan_proposals_planningproject ADD COLUMN description text NOT NULL DEFAULT '';",]
+        "ALTER TABLE plan_proposals_planningproject ADD COLUMN description text NOT NULL DEFAULT '';",
+        "SELECT AddGeometryColumn('plan_proposals_planningproject', 'area', (select find_srid('public', 'geoforms_questionnaire','area')), 'POLYGON', 2);",
+        "ALTER TABLE plan_proposals_planningproject ALTER area SET NOT NULL;",
+        "CREATE INDEX plan_proposals_planningproject_area_id ON plan_proposals_planningproject USING GIST ( area GIST_GEOMETRY_OPS );",
+]
     )
     ),
     ),
