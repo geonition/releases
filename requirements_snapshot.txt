@@ -6,7 +6,7 @@ Shapely==1.2.16
 beautifulsoup4==4.1.3
 -e git://github.com/geonition/dashboard.git@6abdd0039e68f16446645c99cb003f540e6e62c8#egg=dashboard-dev
 django-modeltranslation==0.5
--e git://github.com/geonition/geoforms.git@9c1cf36979afd5c671bb173c77642e4e77f69f22#egg=geoforms-dev
+-e git://github.com/geonition/geoforms.git@3519f5af8ceb71b912a249aba2e8f7e2929cdb7a#egg=geoforms-dev
 -e git://github.com/geonition/django_geojson_rest.git@ffed0bcaee1fe69c3f4f3d0a76a3fa576daae51f#egg=geojson_rest-dev
 -e git://github.com/geonition/django_geonition_client.git@fb5d4573a5be2ac5be8e572357619ee845e3bcc1#egg=geonition_client-dev
 -e git://github.com/geonition/django_geonition_utils.git@e4669b33cff12a0de4df988cad403f419d0e6229#egg=geonition_utils-dev
