@@ -14,7 +14,7 @@ django-modeltranslation==0.5
 -e git://github.com/geonition/django_images.git@7a045a05269553b4e382bf76aac5a5473eb7c9d9#egg=gntimages-dev
 jsmin==2.0.2
 lxml==3.1beta1
--e git://github.com/geonition/geodjango-map-layers@959ec7128420ad482a376c5719b68f9fb67bb3d6#egg=maps-dev
+-e git://github.com/geonition/geodjango-map-layers@d7f6668754630da2d57dd484a105941de6a732e8#egg=maps-dev
 -e git://github.com/geonition/django_opensocial_people@4044428722661500652d750d66ca84abcbfb9a25#egg=opensocial_people-dev
 -e git://github.com/geonition/planproposal@145f21b49db27dd9d3f870a4c21d3616e0109ef6#egg=plan_proposals-dev
 psycopg2==2.4.6
