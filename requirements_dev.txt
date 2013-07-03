@@ -1,3 +1,4 @@
+-e git+ssh://git@github.com/geonition/django.git@stable/1.5.x#egg=django
 -e git+ssh://git@github.com/geonition/auth_page.git@master#egg=auth-page
 -e git+ssh://git@github.com/geonition/base_page.git@master#egg=base-page
 -e git+ssh://git@github.com/geonition/dashboard.git@master#egg=dashboard

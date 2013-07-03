@@ -9,7 +9,7 @@ with the names mentioned below. Load the files in the following way:
 STEP BY STEP:
 1. git clone releases from github
 2. if not allready installed, install libxml2-dev and libxslt-dev
-3. pip install -r requirements.txt
+3. pip install -r requirements_snapshot.txt
 4. create a settings_<site>.py file for the site you are going to use
 5. add to settings_<site>.py database, admins, debug, time_zone, language_code,
 languages, MEDIA_ROOT, EMAIL_BACKEND and other email settings
@@ -18,8 +18,7 @@ languages, MEDIA_ROOT, EMAIL_BACKEND and other email settings
 8. set SPATIAL_REFERENCE_SYSTEM_ID to the right value (e.g. 3067)
 9. Write a javascript file with your analytics script for the installation
 10. set ANALYTICS_TEMPLATE to the template file where you have your analytics script
-11. python manage.py syncdb --settings="geonition.settings_<site>" (run this command twice, as the views of geodjango models cannot be created with custom sql,
-in django version 1.5 the python manage.py syncdb --no-initial-data can be used for the first run)
+11. python manage.py syncdb --settings="geonition.settings_<site>" (starting from django version 1.5 the python manage.py syncdb --no-initial-data can be used for the first run)
 12. python manage.py collectstatic --settings="geonition.settings_<site>"
 13. python manage.py test --settings="geonition.settings_<site>" #should pass all the tests
 
