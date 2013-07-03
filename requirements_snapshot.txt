@@ -1,21 +1,21 @@
-Django==1.4.5
+-e git://github.com/geonition/django.git@9ca378b447016d5ff883fd112a5b0e6b0d1a430c#egg=Django-dev
 PIL==1.1.7
 Shapely==1.2.16
--e git://github.com/geonition/auth_page.git@329de84b92d14ee50318a1ed7076c4ff6bd2b1e3#egg=auth_page-dev
--e git://github.com/geonition/base_page.git@0099feb6a460978bbd10aee1ae2e53c0454d6e3a#egg=base_page-dev
+-e git://github.com/geonition/auth_page.git@95ed67d91fa77da9964ff6e14b605d022356c625#egg=auth_page-dev
+-e git://github.com/geonition/base_page.git@f10ee5b88e49613d6cecb7cc6fbfd764ff325acd#egg=base_page-dev
 beautifulsoup4==4.1.3
--e git://github.com/geonition/dashboard.git@4639e1e57582ef25cc2e6e560fe71701e83760c7#egg=dashboard-dev
+-e git://github.com/geonition/dashboard.git@fc9a0df574d237570d1c164ea5324cde4fbaddd9#egg=dashboard-dev
 django-modeltranslation==0.5
--e git://github.com/geonition/geoforms.git@bde1933ac3cdb51493e7db717ee0d5e2a8013467#egg=geoforms-dev
--e git://github.com/geonition/django_geojson_rest.git@68aa3573b7fac2ac21f1a1b5cdedefe4b8b3f6f5#egg=geojson_rest-dev
--e git://github.com/geonition/django_geonition_client.git@fb5d4573a5be2ac5be8e572357619ee845e3bcc1#egg=geonition_client-dev
+-e git://github.com/geonition/geoforms.git@e1de9cf7080dd4d0848292dc5d4213267ccbed9d#egg=geoforms-dev
+-e git://github.com/geonition/django_geojson_rest.git@fd1d13c2c3251af136398527db5caf5a739896d2#egg=geojson_rest-dev
+-e git://github.com/geonition/django_geonition_client.git@7d4d3a268f27442da7be79b4d1a04b51cb844fbc#egg=geonition_client-dev
 -e git://github.com/geonition/django_geonition_utils.git@e4669b33cff12a0de4df988cad403f419d0e6229#egg=geonition_utils-dev
--e git://github.com/geonition/django_auth.git@dd3ecb3f81554b934cd0964dde848c8140e0e14c#egg=gntauth-dev
--e git://github.com/geonition/django_images.git@7a045a05269553b4e382bf76aac5a5473eb7c9d9#egg=gntimages-dev
+-e git://github.com/geonition/django_auth.git@028af80d554e5351a698b0b5caeb630b37cb5fac#egg=gntauth-dev
+-e git://github.com/geonition/django_images.git@8d64d016af6973254b4eb7d24c49676fc976edc5#egg=gntimages-dev
 jsmin==2.0.2
 lxml==3.1beta1
--e git://github.com/geonition/geodjango-map-layers@b44b24f6318d3e38479d6e4bf8a920d493a67055#egg=maps-dev
--e git://github.com/geonition/django_opensocial_people@4044428722661500652d750d66ca84abcbfb9a25#egg=opensocial_people-dev
--e git://github.com/geonition/planproposal@145f21b49db27dd9d3f870a4c21d3616e0109ef6#egg=plan_proposals-dev
+-e git://github.com/geonition/geodjango-map-layers@a519964062e1d2687c3223195490175c3e27c140#egg=maps-dev
+-e git://github.com/geonition/django_opensocial_people@25aa16187388afc507b11acd827bb7a42df5e59e#egg=opensocial_people-dev
+-e git://github.com/geonition/planproposal@598e5a04f0f95994201d421715af22bc87d60637#egg=plan_proposals-dev
 psycopg2==2.4.6
 pymongo==2.4.1
