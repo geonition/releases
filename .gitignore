@@ -4,3 +4,5 @@ data/*.json~
 .project
 .pydevproject
 geonition/htmlcov/
+*~
+
