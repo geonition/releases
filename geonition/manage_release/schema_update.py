@@ -16,6 +16,11 @@ schema_changes = [('master', (
         "SELECT AddGeometryColumn('geoforms_questionnaire', 'detailed_areas', (select find_srid('public', 'geoforms_questionnaire','area')), 'MULTIPOLYGON', 2);",
         "CREATE INDEX geoforms_questionnaire_detailed_areas_id ON geoforms_questionnaire USING GIST ( detailed_areas GIST_GEOMETRY_OPS );",]
     ),
+    ('geojson_rest', [
+        "ALTER TABLE geojson_rest_feature ADD COLUMN json_str text NOT NULL DEFAULT '';",
+        "ALTER TABLE geojson_rest_property ADD COLUMN json_str text NOT NULL DEFAULT '';",
+        ]
+    ),
     ('plan_proposals', [
         "ALTER TABLE plan_proposals_planningproject ADD COLUMN start_date date;",
         "ALTER TABLE plan_proposals_planningproject ADD COLUMN end_date date;",
