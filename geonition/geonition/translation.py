@@ -7,6 +7,7 @@ from geoforms.models import GeoformElement
 from geoforms.models import QuestionnaireForm
 from geoforms.models import TextElementModel
 from geoforms.models import FormElement
+from geoforms.models import Lottery
 
 #base_page
 class OrganizationSettingTranslationOptions(TranslationOptions):
@@ -51,3 +52,8 @@ class EmptyTranslationOptions(TranslationOptions):
 
 translator.register(QuestionnaireForm, EmptyTranslationOptions)
 translator.register(FormElement, EmptyTranslationOptions)
+
+class LotteryTranslationOptions(TranslationOptions):
+    fields = ('description','thank_you_msg')
+    
+translator.register(Lottery, LotteryTranslationOptions)
