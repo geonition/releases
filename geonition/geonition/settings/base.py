@@ -154,7 +154,7 @@ JAVASCRIPT_CLIENT_TEMPLATES = [
 GOOGLE_API_KEY = ''
 
 #MODEL TRANSLATION
-MODELTRANSLATION_TRANSLATION_REGISTRY = "geonition.translation"
+#MODELTRANSLATION_TRANSLATION_REGISTRY = "geonition.translation"
 
 from django.core.urlresolvers import reverse_lazy
 LOGIN_REDIRECT_URL = reverse_lazy('dashboard')
@@ -163,4 +163,4 @@ LOGOUT_URL = reverse_lazy('logout')
 
 WSGI_APPLICATION = "geonition.wsgi.application"
 
-MODELTRANSLATION_TRANSLATION_FILES = ('geonition.translation',)
+#MODELTRANSLATION_TRANSLATION_FILES = ('geonition.translation',)
