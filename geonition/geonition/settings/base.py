@@ -1,4 +1,11 @@
 import os
+CACHES = { 
+    'default': {
+        'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
+        'LOCATION': '/var/tmp/django_cache',
+    }   
+}
+
 
 # Django settings for geonition project.
 
@@ -111,7 +118,6 @@ INSTALLED_APPS = (
     'dashboard',
     'maps',
     'auth_page',
-    'plan_proposals',
     'geonition_client',
     'gntauth',
     'gntimages',
