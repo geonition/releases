@@ -17,6 +17,7 @@ urlpatterns = patterns('',
     url(r'^auth_page/', include('auth_page.urls')),
     url(r'^geoforms/', include('geoforms.urls')),
     url(r'^maps/', include('maps.urls')),
+    url(r'^questionnaire_admin/', include('questionnaire_admin.urls')), # specific to Mapita service
 
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),

@@ -32,6 +32,7 @@ STATICFILES_DIRS = (
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'compressor.finders.CompressorFinder',
 #    'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
 
@@ -103,15 +104,6 @@ SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 TEST_RUNNER = 'statics.tests.GeonitionTestSuiteRunner'
 
 INSTALLED_APPS = (
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.sites',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-    # Uncomment the next line to enable the admin:
-    'django.contrib.admin',
-    'django.contrib.gis',
 
     #geonition apps
     'base_page',
@@ -124,6 +116,7 @@ INSTALLED_APPS = (
     'geojson_rest',
     'geonition_utils',
     'geoforms',
+    'questionnaire_admin', # specific to Mapita service
     
     # release apps
     'manage_release',
@@ -131,7 +124,17 @@ INSTALLED_APPS = (
     
     # third party apps
     'modeltranslation',
-#    'rosetta',
+    'compressor',
+
+    # contrib apps should be at the end, because modeltranlation takes its precedence from this setting
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.sites',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'django.contrib.admin',
+    'django.contrib.gis',
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
