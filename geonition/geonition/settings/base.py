@@ -173,3 +173,4 @@ LOGOUT_URL = reverse_lazy('logout')
 WSGI_APPLICATION = "geonition.wsgi.application"
 
 #MODELTRANSLATION_TRANSLATION_FILES = ('geonition.translation',)
+COMPRESS_PARSER = 'compressor.parser.HtmlParser'
